@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+
+      >
+    <h:head>
+        <link href="http://localhost:8084/ClienteJSF/resources/css/stilo.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="stilo.css"  />
+        <h:form>
+            <div style="height: 50px;">
+                <h:outputLabel value="Cliente" />
+                <h:inputText value="#{appBeanClient.codigo}" />
+                <h:commandButton value="Consultar" action="#{appBeanClient.consultar()}" />
+            </div>
+            <div>
+                <h:outputLabel value="#{appBeanClient.saludo}" rendered="#{appBeanClient.saludo!=null}" />
+                
+            </div>
+            <h:dataTable  value="#{appBeanClient.inmuebles}" var="inm" styleClass="employeeTable"
+                         headerClass="employeeTableHeader"
+                         rowClasses="employeeTableOddRow,employeeTableEvenRow"  >
+                <f:facet name="header">
+                    <h:outputText value="Inmuebles del cliente #{appBeanClient.codigo}" />
+                </f:facet>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Codigo"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{inm.codigo}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Zona"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{inm.zona}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Direccion"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{inm.direccion}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Estado"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{inm.estCodigo}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Uso"></h:outputText>
+                    </f:facet>
+                    <h:outputText value="#{inm.uso}"></h:outputText>
+                </h:column>
+
+            </h:dataTable>
+        </h:form>
+    </h:body>
+
+</html>
+

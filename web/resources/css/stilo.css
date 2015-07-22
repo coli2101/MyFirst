@@ -1,0 +1,29 @@
+/* 
+    Document   : stilo
+    Created on : 16/07/2015, 03:55:09 PM
+    Author     : jose.gomez
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.employeeTable{   
+   border-collapse:collapse;
+   border:1px solid #000000;
+}
+
+.employeeTableHeader{
+   text-align:center;
+   background:none repeat scroll 0 0 #3399ff;
+   border-bottom:1px solid #000000;  
+   padding:2px;
+}
+
+.employeeTableOddRow{
+   text-align:center;
+   background:none repeat scroll 0 0 #FFFFFFF;	
+}
+
+.employeeTableEvenRow{
+   text-align:center;
+   background:none repeat scroll 0 0 #D3D3D3;
+}
